@@ -1,4 +1,4 @@
-import HomePage from "./components/homepage/homepage"
+import HomePage from "./components/HomePage/HomePage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import Login from "./components/login/login"
