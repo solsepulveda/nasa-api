@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../../App.css'
 import Footer from '../footer'
 import { Link } from "react-router-dom";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
 import { Heart } from '../../assets/icons';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
@@ -14,7 +14,7 @@ function HomePage() {
 
   const [savedDate, setSavedDate] = useState(new Date().toISOString().split('T')[0]);
 
-  const [selectedImage, setSelectedImage] = useState('')
+  const [selectedImage, setSelectedImage] = useState("")
   const [imageDate, setImageDate] = useState('')
   const [selectedText, setSelectedText] = useState('')
   const [counter, setCounter] = useState(0)
