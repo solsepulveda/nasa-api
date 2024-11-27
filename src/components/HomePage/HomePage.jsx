@@ -7,7 +7,7 @@ import { db, auth } from '../firebase/firebase'
 import { Heart } from '../../assets/Icons';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 
-import openNotificationSuccess from '../../utils/notification';
+import openNotificationSuccess from '../../utils/Notification';
 import { LogOut } from '../LogOut/LogOut';
 
 function HomePage() {
