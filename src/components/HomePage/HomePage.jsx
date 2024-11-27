@@ -4,7 +4,7 @@ import Footer from '../footer'
 import { Link } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
-import { Heart } from '../../assets/icons';
+import { Heart } from '../../assets/Icons';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 
 import openNotificationSuccess from '../../utils/notification';
