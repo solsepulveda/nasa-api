@@ -6,8 +6,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
 import { Heart } from '../../assets/Icons';
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
-
-import openNotificationSuccess from '../../utils/Notification';
+import {openNotificationSuccess} from '../../utils/Notification';
 import { LogOut } from '../LogOut/LogOut';
 
 function HomePage() {
@@ -110,7 +109,9 @@ function HomePage() {
             </div>
             <p className='explanation'>{imageDate} <br />{selectedText}</p>
           </div>}
-        {!spin && savedDate !== todayDate && <ArrowRightOutlined onClick={handleClickNext} />}
+        {!spin && savedDate !== todayDate ? <ArrowRightOutlined onClick={handleClickNext} />:
+        <span style={{width:'1em'}}/>}
+       
       </div>
 
       {auth.currentUser?.uid !== undefined && <>

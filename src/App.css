@@ -27,9 +27,9 @@
 }
 
 .explanation {
-  font-size: 14px; /* Aumenta un poco el tamaño para mejorar la lectura en pantallas pequeñas */
+  font-size: 12px; 
   text-align: justify;
-  padding: 1rem; /* Agrega algo de espacio alrededor del texto */
+  padding: 10px; 
 }
 
 .daily-image-container {
