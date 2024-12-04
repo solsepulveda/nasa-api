@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
 import { Heart } from '../../assets/Icons';
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
-import {openNotificationSuccess} from '../../utils/Notification';
+import { ArrowLeftOutlined, ArrowRightOutlined, HeartOutlined } from "@ant-design/icons";
+import {openNotificationSuccess, openNotificationRegistration} from '../../utils/Notification';
 import { LogOut } from '../LogOut/LogOut';
+
 
 function HomePage() {
 
@@ -86,7 +87,7 @@ function HomePage() {
       openNotificationSuccess('Se agregó a favoritos')
     } catch (err) {
       console.error(err)
-      openNotificationSuccess('Para agregar a favoritos, debes registrarte')
+      openNotificationRegistration()
     }
 
   }
@@ -105,7 +106,7 @@ function HomePage() {
               <iframe className='daily-image' width="560" height="315" src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             }
             <div className='fav-button'>
-              <a onClick={addToFav}>Guardar en favoritos </a> <Heart />
+              <a onClick={addToFav}>Guardar en favoritos </a> <HeartOutlined style={{ color:'#646cff'}}/>
             </div>
             <p className='explanation'>{imageDate} <br />{selectedText}</p>
           </div>}
@@ -122,9 +123,9 @@ function HomePage() {
       <div>
       </div>
       <Footer></Footer>
-      {auth.currentUser?.uid == undefined && <Link to='login'>
+     {/*  {auth.currentUser?.uid == undefined && <Link to='login'>
         Registrate aquí
-      </Link>}
+      </Link>} */}
       <LogOut />
     </div>
   )

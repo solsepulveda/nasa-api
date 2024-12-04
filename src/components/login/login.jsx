@@ -71,7 +71,7 @@ const Login = () => {
     <div className="sign-container">
       {registerComponent && (
         <div className="sign">
-          <h1>Register</h1>
+          <h1>Regístrate</h1>
           <input
             onKeyDown={(e) => setEmail(e.target.value)}
             placeholder="correo"
@@ -131,8 +131,8 @@ const Login = () => {
         </div>
       )}
       {/* <Board/> */}
-      <a href="/">Inicio</a>
-      <LogOut />
+      
+      
     </div>
   );
 };

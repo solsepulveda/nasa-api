@@ -1,0 +1,14 @@
+.navbar {
+    width: 117%;
+    height: fit-content; 
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: rgba(99, 0, 99, 0) 0px 0px 8px 0px;
+}
+
+.navbar div{
+    margin:0 40px
+
+}
