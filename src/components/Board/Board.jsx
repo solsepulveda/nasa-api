@@ -3,7 +3,7 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
 import { useEffect, useState } from 'react'
 import '../Board/Board.css'
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { LogOut } from "../LogOut/LogOut";
 
 const Board = () => {
