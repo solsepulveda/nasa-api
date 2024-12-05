@@ -1,6 +1,6 @@
 import "../NarBar/NavBar.css";
 import { LogOut } from "../LogOut/LogOut";
-import { auth, } from '../firebase/firebase'
+import { auth } from '../firebase/firebase'
 
 
 
