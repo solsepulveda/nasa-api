@@ -4,10 +4,9 @@ import Footer from '../footer'
 import { Link } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
-import { Heart } from '../../assets/Icons';
 import { ArrowLeftOutlined, ArrowRightOutlined, HeartOutlined } from "@ant-design/icons";
 import {openNotificationSuccess, openNotificationRegistration} from '../../utils/Notification';
-import { NavBar } from '../NarBar/NavBar';
+/* import { NavBar } from '../NarBar/NavBar'; */
 
 
 function HomePage() {
@@ -94,7 +93,7 @@ function HomePage() {
 
   return (
     <>
-    <NavBar/>
+   {/*  <NavBar/> */}
     <div className='container'>
       <h1>Astronomy picture of the Day</h1>
       <div className='button-and-pic'>

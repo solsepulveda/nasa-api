@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import "../login/login.css";
 import { openNotificationError } from "../../utils/Notification";
-import { NavBar } from '../NarBar/NavBar';
+/* import { NavBar } from '../NarBar/NavBar'; */
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -69,7 +69,7 @@ const Login = () => {
 
   return (
     <>
-    <NavBar/>
+    {/* <NavBar/> */}
     <div className="sign-container">
       {registerComponent && (
         <div className="sign">
