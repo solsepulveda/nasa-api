@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import '../Board/Board.css'
 import { Link } from "react-router";
 import { LogOut } from "../LogOut/LogOut";
+import { NavBar } from "../NarBar/NavBar";
+
 
 const Board = () => {
 
@@ -44,6 +46,7 @@ const Board = () => {
 
     return (
         <>
+        <NavBar/>
             <h1>Board</h1>
             <div className="board">
                 {readPic.map((item) => (
@@ -57,8 +60,8 @@ const Board = () => {
                     )
                 ))}
             </div>
-            <Link to='/'>Inicio</Link>
-            <LogOut/>
+           {/*  <Link to='/'>Inicio</Link>
+            <LogOut/> */}
         </>
     )
 }

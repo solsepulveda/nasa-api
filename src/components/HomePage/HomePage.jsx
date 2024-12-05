@@ -4,7 +4,8 @@ import Footer from "../footer";
 
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase/firebase";
-import { Heart } from "../../assets/Icons";
+import { Link } from "react-router"
+
 import {
   ArrowLeftOutlined,
   ArrowRightOutlined,
@@ -140,8 +141,11 @@ function HomePage() {
           )}
         </div>
 
-        {auth.currentUser?.uid !== undefined && <></>}
-        <div></div>
+        {auth.currentUser?.uid !== undefined && <>
+        <Link to='board'>Ver imágenes guardadas
+        </Link>
+      </>
+      }
         <Footer></Footer>
       </div>
     </>
