@@ -6,18 +6,19 @@ import Board from "./components/Board/Board";
 import { NavBar } from './components/NarBar/NavBar';
 
 
+
 function App() {
 return(
-  <>
-  <NavBar/>
+  
 <Router>
+  <NavBar/>
   <Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/login" element={<Login/>} />
     <Route path="/board" element={<Board/>} />
   </Routes>
 </Router>
-  </>
+  
 
 
 )

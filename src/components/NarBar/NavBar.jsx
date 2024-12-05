@@ -1,8 +1,12 @@
 import "../NarBar/NavBar.css";
 import { LogOut } from "../LogOut/LogOut";
+import { auth, } from '../firebase/firebase'
+
 
 
 export const NavBar = () => {
+
+
   return (
     <div className="navbar">
       <div className="left">
@@ -11,9 +15,9 @@ export const NavBar = () => {
         </div>
       </div>
       <div className="right">
-        <a href="/login">Ingresa aquí</a>
+        {auth.currentUser?.uid == undefined &&<a href="/login">Ingresa aquí</a>}
+      {<LogOut />}
       </div>
-      {/* <LogOut /> */}
     </div>
   );
 };

@@ -126,7 +126,7 @@ function HomePage() {
      {/*  {auth.currentUser?.uid == undefined && <Link to='login'>
         Registrate aquí
       </Link>} */}
-      <LogOut />
+      {/* <LogOut /> */}
     </div>
   )
 }
