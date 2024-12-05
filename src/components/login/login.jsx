@@ -8,9 +8,9 @@ import {
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { LogOut } from "../LogOut/LogOut";
 import "../login/login.css";
 import { openNotificationError } from "../../utils/Notification";
+import { NavBar } from '../NarBar/NavBar';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -68,6 +68,8 @@ const Login = () => {
   }, [email]);
 
   return (
+    <>
+    <NavBar/>
     <div className="sign-container">
       {registerComponent && (
         <div className="sign">
@@ -134,6 +136,7 @@ const Login = () => {
       
       
     </div>
+    </>
   );
 };
 

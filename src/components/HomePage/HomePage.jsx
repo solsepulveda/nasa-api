@@ -7,7 +7,7 @@ import { db, auth } from '../firebase/firebase'
 import { Heart } from '../../assets/Icons';
 import { ArrowLeftOutlined, ArrowRightOutlined, HeartOutlined } from "@ant-design/icons";
 import {openNotificationSuccess, openNotificationRegistration} from '../../utils/Notification';
-import { LogOut } from '../LogOut/LogOut';
+import { NavBar } from '../NarBar/NavBar';
 
 
 function HomePage() {
@@ -48,7 +48,6 @@ function HomePage() {
 
   useEffect(() => {
     getAnyDay();
-    console.log('video', video)
   }, [savedDate]);
 
 
@@ -94,6 +93,8 @@ function HomePage() {
 
 
   return (
+    <>
+    <NavBar/>
     <div className='container'>
       <h1>Astronomy picture of the Day</h1>
       <div className='button-and-pic'>
@@ -128,6 +129,7 @@ function HomePage() {
       </Link>} */}
       {/* <LogOut /> */}
     </div>
+    </>
   )
 }
 
