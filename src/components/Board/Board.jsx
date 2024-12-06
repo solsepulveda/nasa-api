@@ -3,9 +3,8 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from '../firebase/firebase'
 import { useEffect, useState } from 'react'
 import '../Board/Board.css'
-import { Link } from "react-router";
-import { LogOut } from "../LogOut/LogOut";
 import { NavBar } from "../NarBar/NavBar";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 const Board = () => {
@@ -52,10 +51,15 @@ const Board = () => {
                 {readPic.map((item) => (
                     auth.currentUser?.uid === item.userId && (
                         <div className="pic-container" key={item.id}>
-                            <img className="saved-picture" src={item.picture} alt={`Imagen del ${item.date}`} />
-                            <p>Fecha: {item.date}</p>
-                            {/* <p>Explicación: {item.explanation}</p> */}
-                            <a onClick={()=>deleteFav(item.id)} style={{ fontSize: '10px' }}>Eliminar</a>
+                            <div className="picture">
+                                <a href={item.picture} target="_blank">
+
+                            <LazyLoadImage effect="blur" className="saved-picture" src={item.picture} alt={`Imagen del ${item.date}`} />
+                                </a>
+                            </div>
+                            {/* <p className="date">{item.date}</p> */}
+                            <a className="delete" onClick={()=>deleteFav(item.id)} style={{ fontSize: '10px' }}>Eliminar</a>
+                            <p className="fav-explanation">{item.explanation}</p>
                         </div>
                     )
                 ))}

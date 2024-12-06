@@ -4,20 +4,63 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 
 
 }
 
 .pic-container{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
     margin:10px;
-    width:200px;
+    width:250px;
+    height: 300px;
+    box-sizing: border-box;
+    /* 1 */
+    border:1px;
+    /* 2 */
+    border-style: solid;
+    /* 2 */
+    border-color: #e5e7eb;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-overflow: ellipsis;
 }
 
+/* actual picture */
 .saved-picture{
-    width:200px
+    width:200px;
+    height: 200px;
+    border-radius:10px 0 10px 0;
+    object-fit: cover;
 }
 
-.pic-container p{
-    font-size: 9px;
-    margin: 0 2px
+.picture{
+    height: 150px ;
+    overflow: hidden;
+    margin-bottom:5px;
+    
+}
+
+.delete{
+    align-self: flex-end;
+    margin-right: 5px;
+}
+
+/* .pic-container .date{
+    font-size: 10px;
+    margin: 0 2px;
+    align-self:flex-end;
+} */
+
+.fav-explanation{
+    font-size:11px;
+    max-height: 48px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: justify;
 }

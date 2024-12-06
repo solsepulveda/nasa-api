@@ -4,7 +4,7 @@ import Footer from "../footer";
 
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase/firebase";
-import { Link } from "react-router"
+import { Link } from "react-router";
 
 import {
   ArrowLeftOutlined,
@@ -16,6 +16,7 @@ import {
   openNotificationRegistration,
 } from "../../utils/Notification";
 import { NavBar } from "../NarBar/NavBar";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function HomePage() {
   const [savedDate, setSavedDate] = useState(
@@ -57,6 +58,10 @@ function HomePage() {
 
   const handleClickBack = () => {
     const today = new Date();
+
+   /*  const today = new Date().toLocaleString('es-CL', {
+      timeZone: 'America/Santiago',
+    }); */
     // Calcula la fecha retrocediendo con base en el contador
     today.setDate(today.getDate() - (counter + 1));
     const formattedDate = today.toISOString().split("T")[0];
@@ -75,9 +80,11 @@ function HomePage() {
 
   useEffect(() => {
     console.log("current user", auth?.currentUser?.email);
+
   }, [selectedImage]);
 
   const todayDate = new Date().toISOString().split("T")[0];
+  
   const pictureCollection = collection(db, "pictures");
 
   //Guardar en favoritos
@@ -109,7 +116,11 @@ function HomePage() {
             <div className="daily-image-container">
               {type == "image" ? (
                 <a className="daily-image" href={selectedImage} target="_blank">
-                  <img className="daily-image" src={selectedImage}></img>
+                  <LazyLoadImage
+                    className="daily-image"
+                    src={selectedImage}
+                    effect="blur"
+                  ></LazyLoadImage>
                 </a>
               ) : (
                 <iframe
@@ -126,7 +137,7 @@ function HomePage() {
               )}
               <div className="fav-button">
                 <a onClick={addToFav}>Guardar en favoritos </a>{" "}
-                <HeartOutlined style={{ color: "#646cff" }}/>
+                <HeartOutlined style={{ color: "#646cff" }} />
               </div>
               <p className="explanation">
                 {imageDate} <br />
@@ -141,11 +152,11 @@ function HomePage() {
           )}
         </div>
 
-        {auth.currentUser?.uid !== undefined && <>
-        <Link to='board'>Ver imágenes guardadas
-        </Link>
-      </>
-      }
+        {auth.currentUser?.uid !== undefined && (
+          <>
+            <Link to="board">Ver imágenes guardadas</Link>
+          </>
+        )}
         <Footer></Footer>
       </div>
     </>
